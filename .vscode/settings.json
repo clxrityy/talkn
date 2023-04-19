@@ -1,0 +1,15 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "cSpell.words": [
+    "hookform",
+    "lucide",
+    "sadd",
+    "sismember",
+    "smembers",
+    "tailwindcss",
+    "talkn",
+    "upstash",
+    "zrange"
+  ]
+}
