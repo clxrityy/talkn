@@ -2,6 +2,7 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "cSpell.words": [
+    "autosize",
     "hookform",
     "lucide",
     "sadd",
@@ -11,6 +12,7 @@
     "tailwindcss",
     "talkn",
     "upstash",
+    "zadd",
     "zrange"
   ]
 }
