@@ -60,7 +60,7 @@ const page = async ({ params }: PageProps) => {
 
     return <div className='flex-1 justify-between flex flex-col h-full max-h-[calc(100vh-6rem)]'>
         <div className='flex sm:items-center justify-between py-3 border-b-2 border-gray-300'>
-            <div className='relative flex items-center space-x-4'>
+            <div className='relative flex items-center space-x-4 hover:bg-zinc-200 rounded-md transition p-3'>
                 <div className='relative'>
                     <div className='relative w-8 sm:w-12 h-8 sm:h-12'>
                         <Image
@@ -88,7 +88,13 @@ const page = async ({ params }: PageProps) => {
         </div>
 
 
-        <Messages chatPartner={chatPartner} sessionImg={session.user.image} initialMessages={initialMessages} sessionId={session.user.id} />
+        <Messages
+            chatId={chatId}
+            chatPartner={chatPartner}
+            sessionImg={session.user.image}
+            initialMessages={initialMessages}
+            sessionId={session.user.id}
+        />
         <ChatInput chatId={chatId} chatPartner={chatPartner} />
     </div>
 }

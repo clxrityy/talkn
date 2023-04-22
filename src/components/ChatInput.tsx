@@ -18,6 +18,7 @@ const ChatInput: FC<ChatInputProps> = ({ chatPartner, chatId }) => {
     const [input, setInput] = useState<string>('');
 
     const sendMessage = async () => {
+        if (!input) return;
         setIsLoading(true);
 
         try {
@@ -32,7 +33,7 @@ const ChatInput: FC<ChatInputProps> = ({ chatPartner, chatId }) => {
         }
     }
 
-    return <div className='border-t-[0.25rem] border-gray-300 px-4 pt-4 mb-2 sm:mb-0'>
+    return <div className='border-t-[0.15rem] border-gray-300 px-4 pt-4 mb-2 sm:mb-0'>
         <div className='relative flex-1 overflow-hidden rounded-lg shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-[#72cab7]'>
             <TextAreaAutosize ref={textareaRef} onKeyDown={(e) => {
                 if (e.key === 'Enter' && !e.shiftKey) {

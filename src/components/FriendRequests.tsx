@@ -24,8 +24,8 @@ const FriendRequests: FC<FriendRequestsProps> = ({ incomingFriendRequests, sessi
             toPusherKey(`user:${sessionId}:incoming_friend_requests`)
         )
 
-        const friendRequestHandler = () => {
-            
+        const friendRequestHandler = ({ senderId, senderEmail }: IncomingFriendRequest) => {
+            setFriendRequests((prev) => [...prev, { senderId, senderEmail }]);
         }
 
         pusherClient.bind('incoming_friend_requests', friendRequestHandler);

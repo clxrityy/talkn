@@ -44,7 +44,7 @@ const Layout = async ({ children }: LayoutProps) => {
     ).length
 
     return <div className='w-full flex h-screen'>
-        <div className='flex h-full w-full max-w-xs grow flex-col gap-y-5 overflow-y-auto border-r-2 border-gray-300 bg-white m-2'>
+        <div className='flex h-full w-full max-w-xs grow flex-col gap-y-5 overflow-y-auto border-r-2 border-gray-300 bg-white m-2 container pb-3'>
             <Link href='/dashboard' className='flex h-16 shrink-0 items-center'>
                 <Image src='/logo.png' width={100} height={100} alt='logo' className='h-16 w-auto hover:animate-pulse transition' />
             </Link>
@@ -120,7 +120,9 @@ const Layout = async ({ children }: LayoutProps) => {
                 </ul>
             </nav>
         </div>
-        {children}
+        <aside className='max-h-screen container py-16 md:py-12 w-full'>
+            {children}
+        </aside>
     </div>
 }
 
