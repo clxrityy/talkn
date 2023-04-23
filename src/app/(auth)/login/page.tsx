@@ -6,11 +6,8 @@ import Image from 'next/image';
 import { signIn } from 'next-auth/react';
 import { toast } from 'react-hot-toast';
 
-interface pageProps {
 
-}
-
-const Page: FC<pageProps> = ({ }) => {
+const Page: FC = () => {
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
