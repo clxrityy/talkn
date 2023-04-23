@@ -30,7 +30,10 @@ const sidebarOptions: SidebarOption[] = [
         href: '/dashboard/add',
         Icon: 'UserPlus'
     },
-]
+];
+
+
+
 
 const Layout = async ({ children }: LayoutProps) => {
 
@@ -46,11 +49,11 @@ const Layout = async ({ children }: LayoutProps) => {
     return <div className='w-full flex h-screen'>
         <div className='flex h-full w-full max-w-xs grow flex-col gap-y-5 overflow-y-auto border-r-2 border-gray-300 bg-white m-2 container pb-3'>
             <Link href='/dashboard' className='flex h-16 shrink-0 items-center'>
-                <Image src='/logo.png' width={100} height={100} alt='logo' className='h-16 w-auto hover:animate-pulse transition' />
+                <Image src='/logo.png' width={100} height={100} alt='logo' className='h-16 w-auto transition hover:scale-110' />
             </Link>
 
             {friends.length > 0 ? (
-                <div className='text-xs font-semibold leading-6 text-gray-400'>
+                <div className='text-xs font-semibold leading-6 text-gray-400 uppercase'>
                     Your chats
                 </div>
             ) : null
@@ -65,7 +68,7 @@ const Layout = async ({ children }: LayoutProps) => {
 
 
                     <li>
-                        <div className='text-xs font-semibold leading-6 text-gray-400'>
+                        <div className='text-xs font-semibold leading-6 text-gray-400 uppercase'>
                             Overview
                         </div>
 
@@ -92,7 +95,7 @@ const Layout = async ({ children }: LayoutProps) => {
                     </li>
 
                     <li className='-mx-6 mt-auto flex items-center'>
-                        <div className='flex flex-1 items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-200 rounded-md'>
+                        <div className='flex flex-1 items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-200 rounded-md cursor-pointer'>
                             <div className='relative h-8 w-8 bg-gray-50 rounded-full'>
                                 <Image
                                     fill
