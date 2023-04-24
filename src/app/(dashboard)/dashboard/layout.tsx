@@ -10,6 +10,7 @@ import FriendRequestSidebarOptions from '@/components/FriendRequestSidebarOption
 import { fetchRedis } from '@/helpers/redis';
 import { getFriendsByUserId } from '@/helpers/get-friends-by-user-id';
 import SidebarChatList from '@/components/SidebarChatList';
+import MobileChatLayout from '@/components/MobileChatLayout';
 
 
 interface LayoutProps {
@@ -47,7 +48,15 @@ const Layout = async ({ children }: LayoutProps) => {
     ).length
 
     return <div className='w-full flex h-screen'>
-        <div className='flex h-full w-full max-w-xs grow flex-col gap-y-5 overflow-y-auto border-r-2 border-gray-300 bg-white m-2 container pb-3'>
+        <div className='md:hidden'>
+            <MobileChatLayout
+                friends={friends}
+                session={session}
+                sidebarOptions={sidebarOptions}
+                unseenRequestCount={unseenRequestCount}
+            />
+        </div>
+        <div className='hidden md:flex h-full w-full max-w-xs grow flex-col gap-y-5 overflow-y-auto border-r-2 border-gray-300 bg-white m-2 container pb-3'>
             <Link href='/dashboard' className='flex h-16 shrink-0 items-center'>
                 <Image src='/logo.png' width={100} height={100} alt='logo' className='h-16 w-auto transition hover:scale-110' />
             </Link>
