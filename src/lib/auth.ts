@@ -1,4 +1,4 @@
-import { NextAuthOptions } from "next-auth";
+import { NextAuthOptions, Session } from "next-auth";
 import { UpstashRedisAdapter } from "@next-auth/upstash-redis-adapter";
 import { db } from "./db";
 import GoogleProvider from "next-auth/providers/google";
@@ -54,7 +54,7 @@ export const authOptions: NextAuthOptions = {
                 image: dbUser.image,
             }
         },
-        async session({ session, token }) {
+        async session({ session, token }: any) {
             if (token) {
                 session.user.id = token.id
                 session.user.name = token.name
